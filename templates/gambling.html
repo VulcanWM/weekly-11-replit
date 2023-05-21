@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Polyominoes - Gambling</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Polyominoes</h1>
+    </div>
+    <div class="navbar">
+      <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+        <a class="nav-link nav-link-ltr" href="/profile">Your Profile</a>
+        <a class="nav-link nav-link-ltr" href="/grid">Your Grid</a>
+        <a class="nav-link nav-link-ltr" href="/question">Polyomino Questions</a>
+        <a class="nav-link nav-link-ltr" href="/gambling">Gambling</a>
+        <a class="nav-link nav-link-ltr" href="/logout">Logout</a>
+    </div>
+    <div class="content">
+      {% if text != None %}
+        <p>{{text}}</p>
+        <br>
+      {% endif %}
+      <div class="auth">
+        <div class="login-form-body">
+          <div class="login-form-heading">
+            <br>
+          </div>
+          <div class="login-form-form">
+            <form method="POST" action="/rolldice">
+              <h2>Roll Dice</h2>
+              <label for="bet">Bet:</label><br>
+              <input class="login-form-input" type="number" id="bet" name="bet" required><br><br>
+              <label for="number">Number:</label><br>
+              <select id="number" name="number" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <br><br>
+              <button class="login-form-button">roll dice</button>
+            </form>
+          </div>
+          <br>
+          <br>
+          <div class="login-form-form">
+            <form method="POST" action="/cupgame">
+              <h2>Cup Game</h2>
+              <label for="bet">Bet:</label><br>
+              <input class="login-form-input" type="number" id="bet" name="bet" required><br><br>
+              <label for="number">Cup Number:</label><br>
+              <select id="number" name="number" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <br><br>
+              <button class="login-form-button">cup game</button>
+            </form>
+          </div>
+          <br>
+          <br>
+          <div class="login-form-form">
+            <form method="POST" action="/flipcoin">
+              <h2>Flip Coin</h2>
+              <label for="bet">Bet:</label><br>
+              <input class="login-form-input" type="number" id="bet" name="bet" required><br><br>
+              <label for="side">Side:</label><br>
+              <select id="side" name="side" required>
+                <option value="heads">Heads</option>
+                <option value="tails">Tails</option>
+              </select>
+              <br><br>
+              <button class="login-form-button">flip coin</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

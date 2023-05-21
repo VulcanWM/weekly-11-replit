@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='grid.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <center>
+      <title>Polyominoes - Your Grid</title>
+      <div class="header">
+        <h1>Polyominoes - Your Grid</h1>
+      </div>
+      <div class="navbar">
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+        <a class="nav-link nav-link-ltr" href="/profile">Your Profile</a>
+        <a class="nav-link nav-link-ltr" href="/grid">Your Grid</a>
+        <a class="nav-link nav-link-ltr" href="/question">Polyomino Questions</a>
+        <a class="nav-link nav-link-ltr" href="/gambling">Gambling</a>
+        <a class="nav-link nav-link-ltr" href="/logout">Logout</a>
+      </div>
+      <div class="content">
+        {% if text != None %}
+          <p>{{text}}</p>
+          <br>
+        {% endif %}
+        <p>Money: {{user['Money']}}</p>
+        <a class="link" href="/additemtogrid/Land">Get land<br>Cost: 100 Money</a>
+        <br>
+        <a class="link" href="/additemtogrid/Grass">Get grass<br>Cost: 200 Money</a>
+        <br>
+        <a class="link" href="/additemtogrid/Water">Get water<br>Cost: 300 Money</a>
+        <br>
+        <a class="link" href="/additemtogrid/Garden">Get garden<br>Cost: 600 Money</a>
+        <br>
+        <p>Click on a type of land to sell it and earn half the price you bought it for!</p>
+        <br>
+        <div class="container">
+          <div class="grid">
+            {% for land in user['Land'] %}
+              {% set items = ['land', 'grass', 'water', 'garden']%}
+              <a href="/sellland/{{user['Land'].index(land)}}" class="{{items[land]}}"></a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

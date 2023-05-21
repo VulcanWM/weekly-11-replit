@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='error.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Polyominoes - Error</title>
+    <center>
+      <div class="header">
+        <h1>Polyominoes</h1>
+      </div>
+      <div class="navbar">
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+      </div>
+      <div class="content">
+        <p class="error">{{error}}</p>
+      </div>
+    </center>
+    <script src="{{url_for('static', filename='sticky.js')}}"></script>
+  </body>
+</html>

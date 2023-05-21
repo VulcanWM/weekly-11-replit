@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Polyominoes - What are they</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Polyominoes - What are they</h1>
+    </div>
+    <div class="navbar">
+      {% if logged != False %}
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+        <a class="nav-link nav-link-ltr" href="/profile">Your Profile</a>
+        <a class="nav-link nav-link-ltr" href="/grid">Your Grid</a>
+        <a class="nav-link nav-link-ltr" href="/question">Polyomino Questions</a>
+        <a class="nav-link nav-link-ltr" href="/gambling">Gambling</a>
+        <a class="nav-link nav-link-ltr" href="/logout">Logout</a>
+      {% else %}
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/login">Login</a>
+        <a class="nav-link nav-link-ltr" href="/signup">Signup</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+      {% endif %}
+    </div>
+    <div class="content">
+      <p>Polyominoes are plane geometric figures that that are formed by one or more equal squares joined edge to edge.</p> 
+      <p>All of the below shapes are polyominoes</p>
+      <img src="{{url_for('static', filename='polyominoes.png')}}" alt="Polyominoes">
+      <p>Polyominoes are seen in many games, eg. Tetris.</p>
+    </div>
+    <script src="{{url_for('static', filename='sticky.js')}}"></script>
+  </body>
+</html>

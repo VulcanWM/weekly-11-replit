@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Polyominoes</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Polyominoes</h1>
+    </div>
+    <div class="navbar">
+      {% if logged != False %}
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+        <a class="nav-link nav-link-ltr" href="/profile">Your Profile</a>
+        <a class="nav-link nav-link-ltr" href="/grid">Your Grid</a>
+        <a class="nav-link nav-link-ltr" href="/question">Polyomino Questions</a>
+        <a class="nav-link nav-link-ltr" href="/gambling">Gambling</a>
+        <a class="nav-link nav-link-ltr" href="/logout">Logout</a>
+      {% else %}
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/login">Login</a>
+        <a class="nav-link nav-link-ltr" href="/signup ">Signup</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+      {% endif %}
+    </div>
+    <div class="content">
+      <h3>VulcanWM's Weekly11 Submission</h3>
+      <p>You must allow cookies from this website to get the full experience</p>
+      <p>This website is a game about Polyominoes. Click <a class="link" href="/whatarepolyominoes">here</a> to find out what they are.</p>
+      <p>In it, you can get money, and then add types of land to your grid to make different colored polyominoes.</p>
+      <p>There are two ways to get money: either gamble (using the cup game, rolling the dice or flipping the coin); or do the polyomino questions in which they give you a rectange's length and width, and the side length of the squares the rectangle is made up from, then ask how many of those squares the rectangle is made up from.</p>
+      <p>You also get your hourly rate of money, every hour. You can increase your hourly by buying more types of land. Each type of land's hourly is it's price divided by 100.</p>
+    </div>
+    <script src="{{url_for('static', filename='sticky.js')}}"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <center>
+      <title>Polyominoes - Your Profile</title>
+      <div class="header">
+        <h1>Polyominoes - Your Profile</h1>
+      </div>
+      <div class="navbar">
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+        <a class="nav-link nav-link-ltr" href="/profile">Your Profile</a>
+        <a class="nav-link nav-link-ltr" href="/grid">Your Grid</a>
+        <a class="nav-link nav-link-ltr" href="/question">Polyomino Questions</a>
+        <a class="nav-link nav-link-ltr" href="/gambling">Gambling</a>
+        <a class="nav-link nav-link-ltr" href="/logout">Logout</a>
+      </div>
+      <div class="content">
+        <p>Money: {{user['Money']}}</p>
+        <p>Hourly: {{user['Hourly']}}</p>
+        <p>Grid value: {{user['Value']}}</p>
+        <p><a href="/grid" class="link">Your grid</a></p>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <center>
+      <title>Polyominoes - Question</title>
+      <div class="header">
+        <h1>Polyominoes - Question</h1>
+      </div>
+      <div class="navbar">
+        <a class="nav-link nav-link-ltr" href="/">Home</a>
+        <a class="nav-link nav-link-ltr" href="/whatarepolyominoes">What are Polyominoes</a>
+        <a class="nav-link nav-link-ltr" href="/profile">Your Profile</a>
+        <a class="nav-link nav-link-ltr" href="/grid">Your Grid</a>
+        <a class="nav-link nav-link-ltr" href="/question">Polyomino Questions</a>
+        <a class="nav-link nav-link-ltr" href="/gambling">Gambling</a>
+        <a class="nav-link nav-link-ltr" href="/logout">Logout</a>
+      </div>
+      <div class="content">
+        {% if text != None %}
+          <p>{{text}}</p>
+          <br>
+        {% endif %}
+        <img src="{{url_for('static', filename='rectangle.png')}}" alt="rectangle">
+        <p>The polyomino above has a length of {{length}}cm and a width of {{width}}cm. It is made out of squares with the side lengths of {{side}}cm. How many of those squares are used to make the whole polyomino?</p>
+        <div class="auth">
+          <div class="login-form-body">
+            <div class="login-form-heading">
+              <br>
+            </div>
+            <div class="login-form-form">
+              <form method="POST" action="/questions/{{length}}/{{width}}/{{side}}">
+                <input class="login-form-input" placeholder="number of squares" name="number" autocomplete="off" required>
+                <br>
+                <button class="login-form-button">answer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+.error{
+  background-color: #ff491c;
+  margin-left: 35%;
+  margin-right: 35%;
+  height: 30px;
+  font-size: 14px;
+  padding-top: 15px;
+  border-radius: 15px;
+  color: black;
+}
+
+body {
+  color: white;
+  background-color: black;
+}
